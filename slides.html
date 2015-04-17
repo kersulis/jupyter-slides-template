@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- SEE LINE 54 TO ADD YOUR SLIDE DECK CONTENT -->
+<html>
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<title>slides slides</title>
+
+<script src="script/reveal.js/lib/js/head.min.js"></script>
+<script src="script/reveal.js/js/reveal.js"></script>
+<script src="script/require.min.js"></script>
+<script src="script/jquery.min.js"></script>
+
+<!-- General and theme style sheets -->
+<link rel="stylesheet" href="script/reveal.js/css/reveal.css">
+<link rel="stylesheet" href="script/reveal.js/css/theme/simple.css" id="theme">
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'script/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+
+</script>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.min.css">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" type="text/css" href="style/font-awesome/css/font-awesome.min.css">
+
+<!-- IPython CSS -->
+<link rel="stylesheet" type="text/css" href="style/ipython.min.css">
+
+<!-- misc. CSS -->
+<link rel="stylesheet" type="text/css" href="style/misc.css">
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="custom.css">
+
+</head>
+
+<body>
+
+<div class="reveal">
+<!-- Place the contents of your <div class="reveal"> here -->
+<!-- No need to add anything else -->
+
+</div>
+
+<script>
+  // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+  controls: false,
+  progress: true,
+  history: true,
+  // touch: true,
+  // previewLinks: true,
+  slideNumber: true,
+
+  theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+  transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+  { src: "script/reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
+  { src: "script/reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
+  ]
+  });
+</script>
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+<script src="script/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+<!-- End of mathjax configuration -->
+
+<script>
+Reveal.addEventListener( 'slidechanged', function( event ) {
+  window.scrollTo(0,0);
+  MathJax.Hub.Rerender(event.currentSlide);
+});
+</script>
+</body>
+</html>
